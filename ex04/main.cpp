@@ -26,15 +26,15 @@ int main(int argc, char** argv)
         std::cout << "Failed to open file" << std::endl;
         return 1;
     }
-    while (getline(stream, line))
+    while (std::getline(stream, line))
         fullstring.append(line + "\n");
-    stream.close();
     if (fullstring.length() == 0)
     {
         std::cout << "File is empty" << std::endl;
         return 1;
     }
-    fullstring.pop_back();
+    if (line.length() > 0)
+        fullstring.pop_back();
     size_t index = 0;
     while (index != std::string::npos)
     {
@@ -43,7 +43,7 @@ int main(int argc, char** argv)
             break;
         fullstring.erase(index, to_replace.length());
         fullstring.insert(index, replace_with);
-        index += replace_with.length();
+        index += replace_with.length() > 0 ? replace_with.length() : 1;
     }
     std::ofstream output(path + ".replace");
     if (!output.is_open())
@@ -52,6 +52,5 @@ int main(int argc, char** argv)
         return 1;
     }
     output << fullstring;
-    output.close();
     return 0;
 }
