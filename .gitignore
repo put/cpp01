@@ -1,3 +1,5 @@
 ex*/ex*
 *.o
 *.out
+*.txt
+*.replace
