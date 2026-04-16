@@ -1,5 +1,5 @@
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++23
+CXXFLAGS = -Wall -Wextra -Werror -std=c++11
 
 NAME = ex05
 SRCS = main.cpp Harl.cpp
