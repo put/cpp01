@@ -11,6 +11,6 @@ int main(void)
     std::cout << "Address held by stringREF:\t" << &stringREF << std::endl;
     std::cout << "Value of string:\t\t" << str << std::endl;
     std::cout << "Value that stringPTR points to:\t" << *stringPTR << std::endl;
-    std::cout << "Value that of stringREF:\t" << stringREF << std::endl;
+    std::cout << "Value of stringREF:\t" << stringREF << std::endl;
     return 0;
 }
